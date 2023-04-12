@@ -35,7 +35,10 @@
     };
   };
 
-
+  firewall.enable = true;
+  networking.firewall.allowedTCPPorts = [
+    22
+  ]
 
   interfaces = {
     # Don't request DHCP on the physical interfaces

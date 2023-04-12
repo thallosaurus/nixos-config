@@ -75,6 +75,8 @@
   #   wget
     git
     nano
+    nftables
+    iptables
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
