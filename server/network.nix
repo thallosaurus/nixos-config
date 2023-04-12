@@ -21,7 +21,7 @@
 
   services.dhcpd4 = {
     enable = true;
-    interfaces = [ "main@enp2s0" ];
+    interfaces = [ "main" ];
     extraConfig = ''
       option domain-name-servers 9.9.9.9;
       option subnet-mask 255.255.240.0;
