@@ -22,7 +22,7 @@
   networking = {
   useDHCP = false;
   hostName = "router";
-  nameserver = [ 172.16.0.1 ];
+  nameservers = [ "172.16.0.1" ];
   # Define VLANS
   vlans = {
     main = {
