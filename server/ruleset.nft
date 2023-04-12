@@ -1,4 +1,3 @@
-# Translated by iptables-restore-translate v1.8.8 on Wed Apr 12 04:26:46 2023
 add table ip nat
 add chain ip nat OUTPUT { type nat hook output priority -100; policy accept; }
 add chain ip nat POSTROUTING { type nat hook postrouting priority 100; policy accept; }
@@ -15,6 +14,5 @@ add table ip filter
 add chain ip filter OUTPUT { type filter hook output priority 0; policy accept; }
 add chain ip filter FORWARD { type filter hook forward priority 0; policy drop; }
 add chain ip filter INPUT { type filter hook input priority 0; policy accept; }
-add rule ip filter FORWARD iifname "enp2s0.10" oifname "enp1s0" counter accept
-add rule ip filter FORWARD iifname "enp1s0" oifname "enp2s0.10" counter accept
-# Completed on Wed Apr 12 04:26:46 2023
+add rule ip filter FORWARD iifname "main@enp2s0" oifname "enp1s0" counter accept
+add rule ip filter FORWARD iifname "enp1s0" oifname "main@enp2s0" counter accept
