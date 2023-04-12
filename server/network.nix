@@ -21,18 +21,19 @@
 
   services.dhcpd4 = {
     enable = true;
+    interfaces = [ "main@enp2s0" ];
     extraConfig = ''
-      option domain-name-servers 9.9.9.9;
-      option subnet-mask 255.255.240.0;
-
       subnet 10.0.16.0 netmask 255.255.240.0 {
+        range 10.0.16.20 10.0.31.255;
+        interface main@enp2s0;
+        default-lease-time 3600;
+        max-lease-time 7200;
+        option domain-name-servers 9.9.9.9;
+        option subnet-mask 255.255.240.0;
         option broadcast-address 10.0.23.255;
         option routers 10.0.16.1;
-        interface main@enp2s0;
-        range 10.0.16.20 10.0.16.255;
       }
     '';
-    interfaces = [ "main@enp2s0" ];
   };
 
   networking = {
