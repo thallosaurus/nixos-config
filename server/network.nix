@@ -55,7 +55,7 @@
         prefixLength = 20;
       }];
     };
-    iot = {
+    test = {
       ipv4.addresses = [{
         address = "10.0.24.1";
         prefixLength = 20;
