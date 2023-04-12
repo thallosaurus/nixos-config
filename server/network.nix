@@ -17,6 +17,7 @@
   # On WAN, allow IPv6 autoconfiguration and tempory address use.
   #"net.ipv6.conf.${name}.accept_ra" = 2;
   #"net.ipv6.conf.${name}.autoconf" = 1;
+};
 
   networking = {
   useDHCP = false;
@@ -48,7 +49,6 @@
     enp2s0.useDHCP = false;
     
     # Handle the VLANs
-    wan.useDHCP = false;
     main = {
       ipv4.addresses = [{
         address = "10.0.16.1";
@@ -62,6 +62,5 @@
       }];
     };
   };
-};
 };
 }
