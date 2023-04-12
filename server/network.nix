@@ -72,7 +72,7 @@
       iptables -A FORWARD -i main -o enp1s0 -j ACCEPT
       iptables -A FORWARD -i enp1s0 -o main -j ACCEPT
       '';
-    }
+    };
 
     interfaces = {
       # Don't request DHCP on the physical interfaces
