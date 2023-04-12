@@ -30,6 +30,7 @@
 
       subnet 10.0.16.0 netmask 255.255.240.0 {
         range 10.0.16.20 10.0.16.200;
+        interface main;
         default-lease-time 3600;
         max-lease-time 7200;
       }
