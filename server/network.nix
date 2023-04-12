@@ -1,6 +1,10 @@
 { config, pkgs, ... }:
 
 {
+  imports = [
+    ./services/dhcp.nix
+  ];
+  
   boot.kernel.sysctl = {
     # if you use ipv4, this is all you need
     "net.ipv4.conf.all.forwarding" = true;
@@ -19,7 +23,7 @@
     #"net.ipv6.conf.${name}.autoconf" = 1;
   };
 
-  services.dhcpd4 = {
+  /*services.dhcpd4 = {
     enable = true;
     interfaces = [ "main" ];
     extraConfig = ''
@@ -34,7 +38,7 @@
         option routers 10.0.16.1;
       }
     '';
-  };
+  };*/
 
   networking = {
     useDHCP = false;
@@ -57,13 +61,6 @@
 
     nat.externalInterface = "enp1s0";
     nat.internalInterfaces = [ "main" "test" ];
-    /*firewall.enable = false;
-      firewall.allowedTCPPorts = [
-      22
-      ];
-      nftables = {
-      enable = false;
-    };*/
 
     firewall = {
       enable = true;
