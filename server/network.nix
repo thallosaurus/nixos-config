@@ -23,6 +23,7 @@
   useDHCP = false;
   hostName = "router";
   nameservers = [ "172.16.0.1" ];
+  defaultGateway = "172.16.0.1";
   # Define VLANS
   vlans = {
     main = {
