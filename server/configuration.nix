@@ -6,7 +6,8 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
+      # Include the results of the hardware scan.
       /etc/nixos/hardware-configuration.nix
       ./network.nix
     ];
@@ -32,14 +33,14 @@
   console = {
     font = "Lat2-Terminus16";
     keyMap = "de";
-  #  useXkbConfig = true; # use xkbOptions in tty.
+    #  useXkbConfig = true; # use xkbOptions in tty.
   };
 
   # Enable the X11 windowing system.
   # services.xserver.enable = true;
 
 
-  
+
 
   # Configure keymap in X11
   # services.xserver.layout = "us";
@@ -71,8 +72,8 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  #   vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #   wget
+    #   vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    #   wget
     git
     nano
     nftables
