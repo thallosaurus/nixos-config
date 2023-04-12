@@ -41,7 +41,7 @@
     # Don't request DHCP on the physical interfaces
     enp1s0.useDHCP = false;
     enp1s0.ipv4.addresses = [ {
-      address = 172.16.0.2;
+      address = "172.16.0.2";
       prefixLength = 23;
     }];
 
