@@ -49,7 +49,7 @@
     };
   };
 
-  nat.enable = false;
+  nat.enable = true;
 
   nat.externalInterface = "enp1s0";
   nat.internalInterfaces = [ "main" "test" ];
