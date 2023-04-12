@@ -37,7 +37,7 @@
   };
 
   firewall.enable = true;
-  networking.firewall.allowedTCPPorts = [
+  firewall.allowedTCPPorts = [
     22
   ];
 
