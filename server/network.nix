@@ -48,6 +48,19 @@
     enable = false;
   };*/
 
+    services.dhcpd4 = {
+      enable = true;
+      extraConfig = ''
+      option subnet-mask 255.255.240.0;
+      option routers 10.0.16.1;
+      option domain-name-servers 9.9.9.9;
+      subnet 10.0.16.0 netmask 255.255.240.0 {
+          range 10.0.16.20 10.0.16.255;
+      }
+      '';
+      interfaces = [ "main@enp2s0" ];
+  };
+
   interfaces = {
     # Don't request DHCP on the physical interfaces
     enp1s0.useDHCP = false;
