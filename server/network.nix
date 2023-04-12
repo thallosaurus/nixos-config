@@ -36,10 +36,14 @@
     };
   };
 
-  firewall.enable = true;
+  nat.enable = false;
+  firewall.enable = false;
   firewall.allowedTCPPorts = [
     22
   ];
+  nftables = {
+    enable = false;
+  };
 
   interfaces = {
     # Don't request DHCP on the physical interfaces
