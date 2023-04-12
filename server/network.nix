@@ -22,9 +22,9 @@
   services.dhcpd4 = {
     enable = true;
     extraConfig = ''
-      option subnet-mask 255.255.240.0;
-      option routers 10.0.16.1;
       option domain-name-servers 9.9.9.9;
+      option subnet-mask 255.255.240.0;
+      
       subnet 10.0.16.0 netmask 255.255.240.0 {
           option routers 10.0.16.1;
           interface main@enp2s0;
