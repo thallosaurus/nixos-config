@@ -9,10 +9,10 @@
     ];
 
     zones = {
-      main.rillonautikum.internal = {
+      "main.rillonautikum.internal" = {
         file = "/var/dns/rillonautikum.internal";
         master = true;
-      };
+      }
     };
   };
 }
