@@ -19,7 +19,7 @@
   };
 
   users.users.bind = {
-    isNormalUser = false;
+    isSystemUser = true;
     description = "bind";
     group = "bind";
     packages = with pkgs; [
