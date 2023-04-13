@@ -11,6 +11,7 @@
       /etc/nixos/hardware-configuration.nix
       ./network.nix
       ./samba.nix
+      ./services/dhcp.nix
       #./samba-ad.nix
     ];
 
