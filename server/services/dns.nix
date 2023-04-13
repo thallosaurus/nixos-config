@@ -17,4 +17,13 @@
     ];
 
   };
+
+  users.users.bind = {
+    isNormalUser = false;
+    description = "bind";
+    extraGroups = [ "bind" ];
+    packages = with pkgs; [
+      #  thunderbird
+    ];
+  };
 }
