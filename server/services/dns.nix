@@ -10,7 +10,7 @@
 
     zones = {
       main.rillonautikum.internal = {
-        file = "";
+        file = "/var/dns/rillonautikum.internal";
         master = true;
       };
     };
