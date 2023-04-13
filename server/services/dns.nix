@@ -12,7 +12,7 @@
       main.rillonautikum.internal = {
         file = "";
         master = true;
-      }
+      };
     };
   };
 }
