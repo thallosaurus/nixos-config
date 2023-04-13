@@ -1,1 +1,16 @@
-"/var/dns/example.com"
+; BIND db file for main.rillonautikum.internal
+
+$TTL 86400
+
+@       IN      SOA     ns1.main.rillonautikum.internal.      mail.localhost. (
+                        2023041301	; serial number YYMMDDNN
+                        28800           ; Refresh
+                        7200            ; Retry
+                        864000          ; Expire
+                        86400           ; Min TTL
+			)
+
+                NS      ns1.main.rillonautikum.internal. 
+
+
+$ORIGIN main.rillonautikum.internal.
