@@ -21,7 +21,7 @@
   users.users.bind = {
     isNormalUser = false;
     description = "bind";
-    extraGroups = [ "bind" ];
+    group = "bind";
     packages = with pkgs; [
       #  thunderbird
     ];
