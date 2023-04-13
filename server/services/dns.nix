@@ -13,6 +13,6 @@
         file = "";
         master = true;
       }
-    }
+    };
   };
 }
