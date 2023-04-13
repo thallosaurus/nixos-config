@@ -10,7 +10,7 @@
       # Include the results of the hardware scan.
       /etc/nixos/hardware-configuration.nix
       ./network.nix
-      ./samba.nix
+      #./samba.nix
     ];
 
   # Use the systemd-boot EFI boot loader.
