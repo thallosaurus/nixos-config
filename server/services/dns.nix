@@ -8,14 +8,14 @@
       "172.16.0.1"
     ];
 
-    zones = {
-      main = {
+    zones = [
+      {
         "main.rillonautikum.internal" = {
           file = "/var/dns/rillonautikum.internal";
           master = true;
         };
-      };
-    };
+      }
+    ];
 
   };
 }
