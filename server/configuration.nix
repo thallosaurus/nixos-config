@@ -82,7 +82,6 @@
     nano
     nftables
     iptables
-    bind
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

@@ -1,7 +1,17 @@
 { config, pkgs, ... }:
 
 {
-  services.bind = {
+  /*users.users.bind = {
+    isSystemUser = true;
+    description = "bind";
+    group = "bind";
+    packages = with pkgs; [
+      #  thunderbird
+      bind
+    ];
+  };*/
+
+  systemd.user.services.bind = {
     enable = true;
     ipv4Only = true;
     forwarders = [
@@ -16,14 +26,5 @@
       }
     ];
 
-  };
-
-  users.users.bind = {
-    isSystemUser = true;
-    description = "bind";
-    group = "bind";
-    packages = with pkgs; [
-      #  thunderbird
-    ];
   };
 }
