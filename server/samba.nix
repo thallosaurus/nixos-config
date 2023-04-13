@@ -8,6 +8,7 @@
   networking.firewall.allowedUDPPorts = [
     3702 # wsdd
   ];
+  services.samba.openFirewall = true;
   services.samba = {
     enable = true;
     securityType = "user";
