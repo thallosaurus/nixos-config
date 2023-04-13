@@ -64,7 +64,6 @@
 
     firewall = {
       enable = true;
-      networking.firewall.enable = true;
       allowPing = true;
       extraCommands = ''
       iptables -t nat -A POSTROUTING -o enp1s0 -j MASQUERADE
