@@ -12,6 +12,7 @@
       ./network.nix
       ./samba.nix
       ./services/dhcp.nix
+      ./services/dns.nix
       #./samba-ad.nix
     ];
 
