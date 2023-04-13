@@ -1,74 +1,50 @@
-{ config, lib, pkgs, ... }:
-with lib;
+{ config, pkgs, ... }:
 
-let
-  cfg = config.services.samba;
-  samba = cfg.package;
-  nssModulesPath = config.system.nssModules.path;
-  adDomain = "main.rillonautikum.internal";
-  adWorkgroup = "MAIN";
-  adNetbiosName = "MAIN";
-  staticIp = "10.0.16.1";
-in {
-  # Disable resolveconf, we're using Samba internal DNS backend
-  systemd.services.resolvconf.enable = false;
-  environment.etc = {
-    resolvconf = {
-      text = ''
-        search ${adDomain}
-        nameserver ${staticIp}
-      '';
-    };
-  };
-
-  # Rebuild Samba with LDAP, MDNS and Domain Controller support
-  nixpkgs.overlays = [ (self: super: {
-    samba = super.samba.override {
-      enableLDAP = true;
-      enableMDNS = true;
-      enableDomainController = true;
-    };
-  } ) ];
-
-  # Disable default Samba `smbd` service, we will be using the `samba` server binary
-  systemd.services.samba-smbd.enable = false;  
-  systemd.services.samba = {
-    description = "Samba Service Daemon";
-
-    requiredBy = [ "samba.target" ];
-    partOf = [ "samba.target" ];
-
-    serviceConfig = {
-      ExecStart = "${samba}/sbin/samba --foreground --no-process-group";
-      ExecReload = "${pkgs.coreutils}/bin/kill -HUP $MAINPID";
-      LimitNOFILE = 16384;
-      PIDFile = "/run/samba.pid";
-      Type = "notify";
-      NotifyAccess = "all"; #may not do anything...
-    };
-    unitConfig.RequiresMountsFor = "/var/lib/samba";
-  };
+{
+  services.samba-wsdd.enable = true; # make shares visible for windows 10 clients
+  networking.firewall.allowedTCPPorts = [
+    5357 # wsdd
+  ];
+  networking.firewall.allowedUDPPorts = [
+    3702 # wsdd
+  ];
   services.samba = {
     enable = true;
-    enableNmbd = false;
-    enableWinbindd = false;
-    configText = ''
-      # Global parameters
-      [global]
-          dns forwarder = ${staticIp}
-          netbios name = ${adNetbiosName}
-          realm = ${toUpper adDomain}
-          server role = active directory domain controller
-          workgroup = ${adWorkgroup}
-          idmap_ldb:use rfc2307 = yes
-
-      [sysvol]
-          path = /var/lib/samba/sysvol
-          read only = No
-
-      [netlogon]
-          path = /var/lib/samba/sysvol/${adDomain}/scripts
-          read only = No
+    securityType = "user";
+    extraConfig = ''
+      workgroup = WORKGROUP
+      server string = smbnix
+      netbios name = smbnix
+      security = user 
+      #use sendfile = yes
+      #max protocol = smb2
+      # note: localhost is the ipv6 localhost ::1
+      hosts allow = 172.16.0. 10.0.16. 127.0.0.1 localhost
+      hosts deny = 0.0.0.0/0
+      guest account = nobody
+      map to guest = bad user
     '';
-  };  
+    shares = {
+      archive = {
+        path = "/mnt/archive";
+        browseable = "yes";
+        "read only" = "no";
+        "guest ok" = "yes";
+        "create mask" = "0644";
+        "directory mask" = "0755";
+        "force user" = "username";
+        "force group" = "groupname";
+      };
+      /*private = {
+        path = "/mnt/Shares/Private";
+        browseable = "yes";
+        "read only" = "no";
+        "guest ok" = "no";
+        "create mask" = "0644";
+        "directory mask" = "0755";
+        "force user" = "username";
+        "force group" = "groupname";
+      };*/
+    };
+  };
 }
