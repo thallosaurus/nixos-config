@@ -13,6 +13,6 @@
         file = "/var/dns/rillonautikum.internal";
         master = true;
       }
-    };
+    }
   };
 }
