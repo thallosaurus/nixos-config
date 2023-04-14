@@ -23,6 +23,12 @@
     #"net.ipv6.conf.${name}.autoconf" = 1;
   };
 
+  services.miniupnpd = {
+    enable = true;
+    externalInterface = "enp1s0"; # WAN
+    internalIPs = [ "main" "test" ]; # LAN
+  };
+
   /*services.dhcpd4 = {
     enable = true;
     interfaces = [ "main" ];
