@@ -7,8 +7,6 @@
   services.samba = {
     enable = true;
 
-    syncPasswordsByPam = true;
-    # You will still need to set up the user accounts to begin with:
     # $ sudo smbpasswd -a yourusername
 
     # This adds to the [global] section:
