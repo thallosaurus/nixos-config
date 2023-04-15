@@ -16,6 +16,11 @@
     '';
 
     shares = {
+      homes = {
+        browseable = "no"; # note: each home will be browseable; the "homes" share will not.
+        "read only" = "no";
+        "guest ok" = "no";
+      };
       archive = {
         path = "/mnt/archive";
         browseable = "yes";
@@ -76,7 +81,7 @@
   };
 
 
-/*private = {
+  /*private = {
         path = "/mnt/Shares/Private";
         browseable = "yes";
         "read only" = "no";
