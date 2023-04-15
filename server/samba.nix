@@ -21,8 +21,8 @@
         "guest ok" = "no";
       };
       archive = {
-        path = "/mnt/archive";
-        browseable = "yes";
+        "path" = "/mnt/archive";
+        "browseable" = "yes";
         "read only" = "no";
         "guest ok" = "yes";
         "create mask" = "0644";
