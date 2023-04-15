@@ -13,6 +13,8 @@
       ./samba.nix
       ./services/dhcp.nix
       ./services/dns.nix
+      ../common/groups.nix
+      ../common/users/akasha.nix
       #./samba-ad.nix
     ];
 

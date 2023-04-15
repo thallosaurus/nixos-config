@@ -12,7 +12,6 @@
     # This adds to the [global] section:
     extraConfig = ''
       browseable = yes
-      smb encrypt = required
     '';
 
     shares = {
@@ -30,6 +29,7 @@
         "directory mask" = "0755";
         "force user" = "username";
         "force group" = "groupname";
+        "allowed users" = "@smbusers"
       };
     };
   };
