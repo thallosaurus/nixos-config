@@ -4,7 +4,7 @@
   imports = [
     ./services/dhcp.nix
   ];
-  
+
   boot.kernel.sysctl = {
     # if you use ipv4, this is all you need
     "net.ipv4.conf.all.forwarding" = true;
@@ -26,7 +26,7 @@
   services.miniupnpd = {
     enable = true;
     externalInterface = "enp1s0"; # WAN
-    internalIPs = [ "main" "test" ]; # LAN
+    internalIPs = [ "main@enp2s0" "test@enp2s0" ]; # LAN
   };
 
   /*services.dhcpd4 = {
@@ -71,10 +71,13 @@
     firewall = {
       enable = true;
       allowPing = true;
+      allowedUDPPorts = [
+        37949
+      ];
       extraCommands = ''
-      iptables -t nat -A POSTROUTING -o enp1s0 -j MASQUERADE
-      iptables -t filter -A FORWARD -i main -o enp1s0 -j ACCEPT
-      iptables -t filter -A FORWARD -i enp1s0 -o main -j ACCEPT
+        iptables -t nat -A POSTROUTING -o enp1s0 -j MASQUERADE
+        iptables -t filter -A FORWARD -i main -o enp1s0 -j ACCEPT
+        iptables -t filter -A FORWARD -i enp1s0 -o main -j ACCEPT
       '';
     };
 
