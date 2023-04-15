@@ -26,7 +26,7 @@
   services.miniupnpd = {
     enable = true;
     externalInterface = "enp1s0"; # WAN
-    internalIPs = [ "main@enp2s0" "test@enp2s0" ]; # LAN
+    internalIPs = [ "main" "test" ]; # LAN
   };
 
   /*services.dhcpd4 = {
