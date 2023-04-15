@@ -29,7 +29,7 @@
         "directory mask" = "0755";
         "force user" = "username";
         "force group" = "groupname";
-        "allowed users" = "@smbusers"
+        "allowed users" = "@smbusers";
       };
     };
   };
