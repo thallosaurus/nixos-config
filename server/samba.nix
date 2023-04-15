@@ -77,7 +77,7 @@
     };
   };
 
-}
+
 /*private = {
         path = "/mnt/Shares/Private";
         browseable = "yes";
@@ -88,6 +88,4 @@
         "force user" = "username";
         "force group" = "groupname";
       };*/
-};
-};
 }
