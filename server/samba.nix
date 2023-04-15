@@ -20,7 +20,7 @@
         "read only" = "no";
         "guest ok" = "no";
       };
-      archive = {
+      Archive = {
         "path" = "/mnt/archive";
         "browseable" = "yes";
         "read only" = "no";
