@@ -54,7 +54,7 @@
   #
   # This part may be optional for your needs, but I find it makes browsing in Dolphin easier,
   # and it makes connecting from a local Mac possible.
-  services.avahi = {
+  /*services.avahi = {
     enable = true;
     nssmdns = true;
     publish = {
@@ -78,7 +78,7 @@
         </service-group>
       '';
     };
-  };
+  };*/
 
 
   /*private = {
