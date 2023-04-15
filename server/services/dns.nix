@@ -1,16 +1,6 @@
 { config, pkgs, ... }:
 
 {
-  users.users.bind = {
-    isSystemUser = true;
-    description = "bind";
-    group = "bind";
-    packages = with pkgs; [
-      #  thunderbird
-      bind
-    ];
-  };
-
   services.bind = {
     enable = true;
     ipv4Only = true;
@@ -21,7 +11,7 @@
     zones = [
       {
         name = "main.rillonautikum.internal";
-        file = "/var/dns/main.rillonautikum.internal";
+        file = "/root/nixos-config/server/zones/main.rillonautikum";
         master = true;
       }
     ];
