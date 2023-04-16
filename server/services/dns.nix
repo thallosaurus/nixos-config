@@ -12,6 +12,7 @@
       allow-query-cache { localhost; localnets; };
 
       allow-recursion { localhost; localnets; };
+      allow-transfer { localhost; };
     '';
 
     extraConfig = ''
