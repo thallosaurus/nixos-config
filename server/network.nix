@@ -82,6 +82,8 @@
         iptables -t nat -A POSTROUTING -o enp1s0 -j MASQUERADE
         iptables -t filter -A FORWARD -i main -o enp1s0 -j ACCEPT
         iptables -t filter -A FORWARD -i enp1s0 -o main -j ACCEPT
+        iptables -t filter -A FORWARD -i app -o enp1s0 -j ACCEPT
+        iptables -t filter -A FORWARD -i enp1s0 -o app -j ACCEPT
       '';
     };
 
