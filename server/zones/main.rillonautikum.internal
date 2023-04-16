@@ -14,3 +14,4 @@ $TTL 86400
 
 
 $ORIGIN main.rillonautikum.internal.
+ns1.       IN   A      10.0.16.1
