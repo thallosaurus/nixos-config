@@ -15,7 +15,16 @@
         master = true;
       }
     ];
+  };
 
+  environment.etc = {
+    "/etc/dns/mainzone" =
+    {
+      text = (builtins.readFile ../zones/main.rillonautikum.internal);
+      mode = "0660";
+      user = "named";
+      group = "named";
+    };
   };
 
   networking.firewall.allowedTCPPorts = [ 53 ];
