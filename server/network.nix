@@ -103,6 +103,7 @@
           prefixLength = 20;
         }];
       };
+      app = {
         ipv4.addresses = [{
           address = "10.0.32.1";
           prefixLength = 20;
