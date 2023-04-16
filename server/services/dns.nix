@@ -38,7 +38,7 @@
     ];
   };
 
-  environment.etc = {
+  #environment.etc = {
     /*"dns/zones/mainzone" =
       {
         text = (builtins.readFile ../zones/main.rillonautikum.internal);
