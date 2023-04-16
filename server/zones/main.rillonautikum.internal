@@ -3,7 +3,7 @@
 $TTL 86400
 
 @       IN      SOA     ns1.main.rillonautikum.internal.      mail.localhost. (
-                        2023041304	; serial number YYMMDDNN
+                        2023041305	; serial number YYMMDDNN
                         28800           ; Refresh
                         7200            ; Retry
                         864000          ; Expire
@@ -15,3 +15,4 @@ $TTL 86400
 
 $ORIGIN main.rillonautikum.internal.
 ns1.main.rillonautikum.internal.          IN      A       10.0.16.1
+router.main.rillonautikum.internal.          IN      A       10.0.16.1
