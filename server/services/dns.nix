@@ -39,6 +39,11 @@
   };
 
   environment.etc = {
+    "dns/zones" = {
+      user = "named";
+      group = "named";
+      mode = 0640;
+    };
     "dns/zones/mainzone" =
       {
         text = (builtins.readFile ../zones/main.rillonautikum.internal);
