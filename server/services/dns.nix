@@ -11,7 +11,7 @@
     zones = [
       {
         name = "main.rillonautikum.internal";
-        file = "/root/nixos-config/server/zones/main.rillonautikum";
+        file = "/mnt/dns/main.rillonautikum";
         master = true;
       }
     ];
