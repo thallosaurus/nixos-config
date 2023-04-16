@@ -8,6 +8,12 @@
       "172.16.0.1"
     ];
 
+    extraConfig = ''
+      acl acl-name { 
+        any
+      };
+    '';
+
     zones = [
       {
         name = "main.rillonautikum.internal";
@@ -19,12 +25,12 @@
 
   environment.etc = {
     "dns/mainzone" =
-    {
-      text = (builtins.readFile ../zones/main.rillonautikum.internal);
-      mode = "0660";
-      user = "named";
-      group = "named";
-    };
+      {
+        text = (builtins.readFile ../zones/main.rillonautikum.internal);
+        mode = "0660";
+        user = "named";
+        group = "named";
+      };
   };
 
   networking.firewall.allowedTCPPorts = [ 53 ];
