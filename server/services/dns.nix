@@ -8,9 +8,6 @@
       "172.16.0.1"
     ];
 
-    networking.firewall.allowedTCPPorts = [ 23 ];
-    networking.firewall.allowedUDPPorts = [ 23 ];
-
     zones = [
       {
         name = "main.rillonautikum.internal";
@@ -20,4 +17,7 @@
     ];
 
   };
+
+  networking.firewall.allowedTCPPorts = [ 23 ];
+  networking.firewall.allowedUDPPorts = [ 23 ];
 }
