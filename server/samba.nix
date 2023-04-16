@@ -53,6 +53,7 @@
   # To make SMB mounting easier on the command line
   environment.systemPackages = with pkgs; [
     cifs-utils
+    samba4Full
   ];
 
 
