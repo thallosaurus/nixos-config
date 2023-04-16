@@ -18,6 +18,6 @@
 
   };
 
-  networking.firewall.allowedTCPPorts = [ 23 ];
-  networking.firewall.allowedUDPPorts = [ 23 ];
+  networking.firewall.allowedTCPPorts = [ 53 ];
+  networking.firewall.allowedUDPPorts = [ 53 ];
 }
