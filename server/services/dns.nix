@@ -32,14 +32,25 @@
           "key 'tsig-key'"
         ];
         extraConfig = ''
-        allow-update {key "tsig-key";};
+          allow-update {key "tsig-key";};
+        '';
+      }
+      {
+        name = "1.10.in-addr.arpa";
+        file = "/var/dns/mainzone.reverse";
+        master = true;
+        slaves = [
+          "key 'tsig-key'"
+        ];
+        extraConfig = ''
+          allow-update {key "tsig-key";};
         '';
       }
     ];
   };
 
   #environment.etc = {
-    /*"dns/zones/mainzone" =
+  /*"dns/zones/mainzone" =
       {
         text = (builtins.readFile ../zones/main.rillonautikum.internal);
         mode = "0660";

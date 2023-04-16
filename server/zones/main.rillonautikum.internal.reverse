@@ -1,0 +1,13 @@
+; BIND db file for main.rillonautikum.internal
+
+$TTL    604800
+@       IN      SOA     ns1.main.rillonautikum.internal. mail.localhost. (
+                              2         ; Serial
+                         604800         ; Refresh
+                          86400         ; Retry
+                        2419200         ; Expire
+                         604800 )       ; Negative Cache TTL
+
+@       IN      NS      ns1.main.rillonautikum.internal.
+
+1.16    IN      PTR     ns1.main.rillonautikum.internal.
