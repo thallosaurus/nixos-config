@@ -11,7 +11,7 @@
     zones = [
       {
         name = "main.rillonautikum.internal";
-        file = "/etc/dns/main.rillonautikum.internal";
+        file = "/etc/dns/mainzone";
         master = true;
       }
     ];
