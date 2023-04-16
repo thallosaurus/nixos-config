@@ -18,7 +18,7 @@
   };
 
   environment.etc = {
-    "/etc/dns/mainzone" =
+    "dns/mainzone" =
     {
       text = (builtins.readFile ../zones/main.rillonautikum.internal);
       mode = "0660";
