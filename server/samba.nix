@@ -37,7 +37,7 @@
         "browseable" = "yes";
         "read only" = "no";
         "guest ok" = "no";
-      }
+      };
     };
   };
 
