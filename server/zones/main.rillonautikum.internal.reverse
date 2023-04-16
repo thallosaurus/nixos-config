@@ -10,5 +10,5 @@ $TTL    604800
 
 @       IN      NS      ns1.main.rillonautikum.internal.
 
-$ORIGIN 10.in-addr.arpa.
-1.16.0.    IN      PTR     ns1.main.rillonautikum.internal.
+$ORIGIN 16.0.10.in-addr.arpa.
+1.    IN      PTR     ns1.main.rillonautikum.internal.
