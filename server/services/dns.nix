@@ -10,7 +10,7 @@
 
     extraConfig = ''
       acl acl-name { 
-        any
+        any;
       };
     '';
 
