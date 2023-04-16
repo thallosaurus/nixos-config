@@ -15,6 +15,8 @@
     '';
 
     extraConfig = ''
+      include "/mnt/certs/tsig.key";
+
       acl acl-name { 
         any;
       };
