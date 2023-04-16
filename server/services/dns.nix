@@ -27,10 +27,9 @@
         name = "main.rillonautikum.internal";
         file = "/etc/dns/zones/mainzone";
         master = true;
-        extraConfig = ''
-          allow-transfer { key "tsig-key"; };
-          notify no;
-        '';
+        slaves = [
+          "key 'tsig-key'"
+        ];
       }
     ];
   };
