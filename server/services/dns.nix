@@ -31,6 +31,9 @@
         slaves = [
           "key 'tsig-key'"
         ];
+        extraConfig = ''
+        allow-update (key "tsig-key";);
+        '';
       }
     ];
   };
