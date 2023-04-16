@@ -36,7 +36,7 @@
         '';
       }
       {
-        name = "1.16.in-addr.arpa";
+        name = "1.16.0.10.in-addr.arpa";
         file = "/var/dns/mainzone.reverse";
         master = true;
         slaves = [
