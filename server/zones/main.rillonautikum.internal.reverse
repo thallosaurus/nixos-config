@@ -1,14 +1,12 @@
-; BIND db file for main.rillonautikum.internal
-
-$TTL    604800
-@       IN      SOA     ns1.main.rillonautikum.internal. mail.localhost. (
-                              2         ; Serial
-                         604800         ; Refresh
-                          86400         ; Retry
-                        2419200         ; Expire
-                         604800 )       ; Negative Cache TTL
-
-@       IN      NS      ns1.main.rillonautikum.internal.
-
+$ORIGIN .
+$TTL 100        ; 1 minute 40 seconds
+16.0.10.in-addr.arpa IN SOA ns1.main.rillonautikum.internal. mail.localhost. (
+                                2017022816 ; serial
+                                10800      ; refresh (3 hours)
+                                3600       ; retry (1 hour)
+                                1728000    ; expire (2 weeks 6 days)
+                                38400      ; minimum (10 hours 40 minutes)
+                                )
+                        NS      ns1.main.rillonautikum.internal.
 $ORIGIN 16.0.10.in-addr.arpa.
-1.    IN      PTR     ns1.main.rillonautikum.internal.
+1                       PTR     ns1.main.rillonautikum.internal.
