@@ -8,14 +8,16 @@
       "172.16.0.1"
     ];
 
+    extraOptions = ''
+      allow-query-cache { localhost; localnets; };
+
+      allow-recursion { localhost; localnets; };
+    '';
+
     extraConfig = ''
-            acl acl-name { 
-              any;
-            };
-
-            allow-query-cache { localhost; localnets; };
-
-            allow-recursion { localhost; localnets; };
+      acl acl-name { 
+        any;
+      };
     '';
 
     zones = [
