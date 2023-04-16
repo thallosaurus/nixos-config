@@ -26,7 +26,7 @@
     zones = [
       {
         name = "main.rillonautikum.internal";
-        file = "/etc/dns/zones/mainzone";
+        file = "/var/dns/mainzone";
         master = true;
         slaves = [
           "key 'tsig-key'"
@@ -39,19 +39,14 @@
   };
 
   environment.etc = {
-    "dns/zones" = {
-      user = "named";
-      group = "named";
-      mode = 0640;
-    };
-    "dns/zones/mainzone" =
+    /*"dns/zones/mainzone" =
       {
         text = (builtins.readFile ../zones/main.rillonautikum.internal);
         mode = "0660";
         user = "named";
         group = "named";
       };
-  };
+  };*/
 
   networking.firewall.allowedTCPPorts = [ 53 ];
   networking.firewall.allowedUDPPorts = [ 53 ];
