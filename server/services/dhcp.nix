@@ -14,6 +14,7 @@
         option subnet-mask 255.255.240.0;
         option broadcast-address 10.0.23.255;
         option routers 10.0.16.1;
+        option domain-search main.rillonautikum.internal;
       }
     '';
   };
