@@ -26,7 +26,7 @@
         "read only" = "no";
         "guest ok" = "yes";
       };
-      Samples And Stuff = {
+      "Samples And Stuff" = {
         "path" = "/mnt/stuff";
         "browseable" = "yes";
         "read only" = "no";
