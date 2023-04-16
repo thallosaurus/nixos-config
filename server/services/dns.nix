@@ -32,7 +32,7 @@
           "key 'tsig-key'"
         ];
         extraConfig = ''
-        allow-update (key "tsig-key";);
+        allow-update {key "tsig-key";};
         '';
       }
     ];
