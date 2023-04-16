@@ -23,14 +23,14 @@
     zones = [
       {
         name = "main.rillonautikum.internal";
-        file = "/etc/dns/mainzone";
+        file = "/etc/dns/zones/mainzone";
         master = true;
       }
     ];
   };
 
   environment.etc = {
-    "dns/mainzone" =
+    "dns/zones/mainzone" =
       {
         text = (builtins.readFile ../zones/main.rillonautikum.internal);
         mode = "0660";

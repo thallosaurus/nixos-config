@@ -32,6 +32,12 @@
         "read only" = "no";
         "guest ok" = "yes";
       };
+      "Certificates" = {
+        "path" = "/mnt/certs";
+        "browseable" = "yes";
+        "read only" = "no";
+        "guest ok" = "no";
+      }
     };
   };
 
