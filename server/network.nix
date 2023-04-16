@@ -26,7 +26,7 @@
   services.miniupnpd = {
     enable = true;
     externalInterface = "enp1s0"; # WAN
-    internalIPs = [ "main" "test" ]; # LAN
+    internalIPs = [ "main" "app" "test" ]; # LAN
   };
 
   /*services.dhcpd4 = {
@@ -57,6 +57,10 @@
         id = 10;
         interface = "enp2s0";
       };
+      app = {
+        id = 20;
+        interface = "enp2s0";
+      };
       test = {
         id = 30;
         interface = "enp2s0";
@@ -66,7 +70,7 @@
     nat.enable = true;
 
     nat.externalInterface = "enp1s0";
-    nat.internalInterfaces = [ "main" "test" ];
+    nat.internalInterfaces = [ "main" "app" "test" ];
 
     firewall = {
       enable = true;
@@ -96,6 +100,11 @@
       main = {
         ipv4.addresses = [{
           address = "10.0.16.1";
+          prefixLength = 20;
+        }];
+      };
+        ipv4.addresses = [{
+          address = "10.0.32.1";
           prefixLength = 20;
         }];
       };
