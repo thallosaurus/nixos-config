@@ -1,6 +1,6 @@
-$ORIGIN .
+;$ORIGIN .
 $TTL 100        ; 1 minute 40 seconds
-16.0.10.in-addr.arpa IN SOA ns1.main.rillonautikum.internal. mail.localhost. (
+@ IN SOA ns1.main.rillonautikum.internal. mail.localhost. (
                                 2017022816 ; serial
                                 10800      ; refresh (3 hours)
                                 3600       ; retry (1 hour)
@@ -8,5 +8,5 @@ $TTL 100        ; 1 minute 40 seconds
                                 38400      ; minimum (10 hours 40 minutes)
                                 )
                         NS      ns1.main.rillonautikum.internal.
-$ORIGIN 16.0.10.in-addr.arpa.
-1                       PTR     ns1.main.rillonautikum.internal.
+$ORIGIN 10.in-addr.arpa.
+1.16.0                       PTR     ns1.main.rillonautikum.internal.
