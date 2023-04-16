@@ -9,9 +9,13 @@
     ];
 
     extraConfig = ''
-      acl acl-name { 
-        any;
-      };
+            acl acl-name { 
+              any;
+            };
+
+            allow-query-cache { localhost; localnets; };
+
+            allow-recursion { localhost; localnets; };
     '';
 
     zones = [
