@@ -10,7 +10,6 @@
       ddns-updates on;
       ddns-update-style interim;
       update-static-leases on;
-      ignore client-updates;
 
       zone main.rillonautikum.internal. {
         primary 127.0.0.1;
