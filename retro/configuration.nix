@@ -91,6 +91,7 @@
     packages = with pkgs; [
       firefox
       vscode
+      teams
       #  thunderbird
     ];
   };
