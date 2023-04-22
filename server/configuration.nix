@@ -90,6 +90,7 @@
     samba4Full
     vscode
     helix
+    htop
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
