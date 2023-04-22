@@ -32,6 +32,12 @@
         "read only" = "no";
         "guest ok" = "yes";
       };
+      "Config" = {
+        "path" = "/mnt/config";
+        "browseable" = "yes";
+        "read only" = "no";
+        "guest ok" = "no";
+      };
       "Certificates" = {
         "path" = "/mnt/certs";
         "browseable" = "yes";
