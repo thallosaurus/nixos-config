@@ -9,10 +9,10 @@
     [
       # Include the results of the hardware scan.
       /etc/nixos/hardware-configuration.nix
+      /mnt/config/dhcp/fixed-dhcp.nix
       ./network.nix
       ./samba.nix
       ./services/dhcp.nix
-      ./services/fixed-dhcp.nix
       ./services/dns.nix
       ../common/groups.nix
       ../common/users/akasha.nix
