@@ -3,7 +3,7 @@
 {
   services.dhcpd4 = {
     enable = true;
-    interfaces = [ "main" ];
+    interfaces = [ "main" "test" ];
     extraConfig = ''
       include "/mnt/certs/tsig.key";
 
@@ -33,6 +33,17 @@
         option domain-name "main.rillonautikum.internal";
         option domain-search "main.rillonautikum.internal";
         option domain-name-servers 10.0.16.1;
+      }
+      
+      subnet 10.0.32.0 netmask 255.255.240.0 {
+        range 10.0.32.20 10.0.32.200;
+        interface test;
+        default-lease-time 3600;
+        max-lease-time 7200;
+        option subnet-mask 255.255.240.0;
+        option broadcast-address 10.0.47.255;
+        option routers 10.0.32.1;
+        option domain-name-servers 10.0.32.1;
       }
     '';
   };

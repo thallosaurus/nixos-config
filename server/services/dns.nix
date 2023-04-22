@@ -26,7 +26,7 @@
     zones = [
       {
         name = "main.rillonautikum.internal";
-        file = "/var/dns/mainzone";
+        file = "/mnt/config/dns/mainzone";
         master = true;
         slaves = [
           "key 'tsig-key'"
@@ -37,7 +37,7 @@
       }
       {
         name = "10.in-addr.arpa";
-        file = "/var/dns/mainzone.reverse";
+        file = "/mnt/config/dns/mainzone.reverse";
         master = true;
         slaves = [
           "key 'tsig-key'"

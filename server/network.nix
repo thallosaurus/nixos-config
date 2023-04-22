@@ -67,10 +67,10 @@
       };
     };
 
-    nat.enable = true;
+/*    nat.enable = true;
 
     nat.externalInterface = "enp1s0";
-    nat.internalInterfaces = [ "main" "app" "test" ];
+    nat.internalInterfaces = [ "main" "app" "test" ];*/
 
     firewall = {
       enable = true;
@@ -80,8 +80,12 @@
       ];
       extraCommands = ''
         iptables -t nat -A POSTROUTING -o enp1s0 -j MASQUERADE
+
         iptables -t filter -A FORWARD -i main -o enp1s0 -j ACCEPT
         iptables -t filter -A FORWARD -i enp1s0 -o main -j ACCEPT
+        
+        iptables -t filter -A FORWARD -i test -o enp1s0 -j ACCEPT
+        iptables -t filter -A FORWARD -i enp1s0 -o test -j ACCEPT
       '';
     };
 
@@ -105,7 +109,7 @@
       };
       test = {
         ipv4.addresses = [{
-          address = "10.0.24.1";
+          address = "10.0.32.1";
           prefixLength = 20;
         }];
       };
