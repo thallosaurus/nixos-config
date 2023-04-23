@@ -5,7 +5,7 @@
     # Define VLANS
     vlans = {
       app = {
-        id = 10;
+        id = 20;
         interface = "enp4s0";
       };
     };
