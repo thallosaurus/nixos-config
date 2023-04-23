@@ -1,6 +1,7 @@
 { config, pkgs, ... }:
 {
   networking = {
+    useDHCP = true;
     # Define VLANS
     vlans = {
       app = {
