@@ -15,6 +15,7 @@
       ./services/dhcp.nix
       ./services/dns.nix
       ./services/step-ca.nix
+      ./services/nfs.nix
       ../common/groups.nix
       ../common/users/akasha.nix
       #./samba-ad.nix

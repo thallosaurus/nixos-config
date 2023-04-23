@@ -117,8 +117,8 @@
   system.stateVersion = "22.11"; # Did you read the comment?
 
 
-  fileSystems."/mnt/config" = {
-    device = "10.0.0.1:/config";
+  fileSystems."/mnt/nixconfig" = {
+    device = "10.0.0.1:/nixconfig";
     fsType = "nfs";
   };
 }
