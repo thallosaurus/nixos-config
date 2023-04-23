@@ -76,6 +76,12 @@
         # Allow Legacy In
         #iptables -t filter -A FORWARD -o enp1s0 -j ACCEPT
         
+        # Allow outgoing Packets from legacy to wan
+        iptables -t filter -A FORWARD -i enp2s0 -o enp1s0 -j ACCEPT
+
+        # Allow incoming Packets to main from legacy
+        iptables -t filter -A FORWARD -i enp1s0 -o enp2s0 -j ACCEPT
+        
         # Allow outgoing Packets from main to wan
         iptables -t filter -A FORWARD -i main -o enp1s0 -j ACCEPT
 
@@ -106,6 +112,10 @@
 
 
       enp2s0.useDHCP = false;
+      enp2s0.ipv4.addresses = [{
+        address = "10.0.0.1";
+        prefixLength = 21;
+      }];
 
       # Handle the VLANs
       main = {

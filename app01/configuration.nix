@@ -94,6 +94,7 @@
 
   services.logind.lidSwitch = "ignore";
   services.logind.lidSwitchDocked = "ignore";
+  services.logind.lidSwitchExternalPower = "ignore";
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];

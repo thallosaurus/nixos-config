@@ -3,7 +3,7 @@
 {
   services.dhcpd4 = {
     enable = true;
-    interfaces = [ "main" "test" "app" ];
+    interfaces = [ "main" "test" "app" "enp2s0" ];
     extraConfig = ''
       include "/mnt/certs/tsig.key";
 
@@ -25,6 +25,19 @@
       zone 10.in-addr.arpa. {
         primary 127.0.0.1;
         key tsig-key;
+      }
+
+      subnet 10.0.0.0 netmask 255.255.248.0 {
+        range 10.0.0.20 10.0.0.200;
+        interface enp2s0;
+        default-lease-time 3600;
+        max-lease-time 7200;
+        option subnet-mask 255.255.248.0;
+        option broadcast-address 10.0.15.255;
+        option routers 10.0.0.1;
+        option domain-name "legacy.rillonautikum.internal";
+        option domain-search "legacy.rillonautikum.internal";
+        option domain-name-servers 10.0.0.1;
       }
 
       subnet 10.0.16.0 netmask 255.255.248.0 {
