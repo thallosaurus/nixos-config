@@ -5,7 +5,7 @@
     enable = true;
     ipv4Only = true;
     forwarders = [
-      "172.16.0.1"
+      "1.1.1.1" # will be changed to uncensored ip i think
     ];
 
     extraOptions = ''
@@ -24,6 +24,7 @@
     '';
 
     zones = [
+      # mainnet
       {
         name = "main.rillonautikum.internal";
         file = "/mnt/config/dns/mainzone";
@@ -38,6 +39,19 @@
       {
         name = "10.in-addr.arpa";
         file = "/mnt/config/dns/mainzone.reverse";
+        master = true;
+        slaves = [
+          "key 'tsig-key'"
+        ];
+        extraConfig = ''
+          allow-update {key "tsig-key";};
+        '';
+      }
+
+      # Appnet
+      {
+        name = "app.rillonautikum.internal";
+        file = "/mnt/config/dns/appzone";
         master = true;
         slaves = [
           "key 'tsig-key'"
